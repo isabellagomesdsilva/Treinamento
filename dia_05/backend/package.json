@@ -1,0 +1,20 @@
+{
+  "name": "backend-aula",
+  "version": "1.0.0",
+  "description": "aula 01 backend",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "backend",
+    "aula",
+    "01"
+  ],
+  "author": "Higor Diego",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.26.1",
+    "express": "^4.17.3"
+  }
+}

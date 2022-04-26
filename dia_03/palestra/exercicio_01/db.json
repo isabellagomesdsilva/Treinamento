@@ -1,0 +1,47 @@
+{
+    "salarios": [
+        {
+            "name": "Higor Diego",
+            "email": "higor.pinheiro@redfox.tech",
+            "valor": 300
+        },
+        {
+            "name": "Gabs",
+            "email": "gabs@redfox.tech",
+            "valor": 1000
+        },
+        {
+            "name": "Dana",
+            "email": "dana@redfox.tech",
+            "valor": 150
+        }
+    ],
+    "compras": [
+        {
+            "name": "Sabão",
+            "valor": "120"
+        },
+        {
+            "name": "Sabonete",
+            "valor": "120"
+        },
+        {
+            "name": "borracha",
+            "valor": "30"
+        }
+    ],
+    "cep": [
+        {
+            "name": "jdo",
+            "cep": "63050222"
+        },
+        {
+            "name": "sp",
+            "cep": "63050223"
+        },
+        {
+            "name": "mg",
+            "cep": "63050221"
+        }
+    ]
+}

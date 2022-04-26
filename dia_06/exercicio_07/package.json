@@ -1,0 +1,19 @@
+{
+  "name": "exercicio_07",
+  "version": "1.0.0",
+  "description": "backend - exercicio 3",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "backend",
+    "mongo"
+  ],
+  "author": "Isabella Gomes",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.3",
+    "mongodb": "^4.5.0"
+  }
+}

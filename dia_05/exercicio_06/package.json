@@ -1,0 +1,19 @@
+{
+  "name": "exercicio_06",
+  "version": "1.0.0",
+  "description": "exercicio 02 - backend",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "backend",
+    "exercicio"
+  ],
+  "author": "Isabella Gomes",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.26.1",
+    "express": "^4.17.3"
+  }
+}

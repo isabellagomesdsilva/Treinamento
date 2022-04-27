@@ -42,13 +42,9 @@ exports.validateDuplicatedEmailUser = async (req, res, next) => {
 };
 
 exports.validateFoundById = async (req, res, next) => {
-  try {
-    const { id } = req.params;
-    const { data } = await getOneUser(id);
-    if (!data)
-      return res.status(404).json({ MessageError: "Usuário não cadastrado" });
-    return next();
-  } catch (err) {
-    return res.status(500).json({ MessageError: "Erro não esperado!" });
-  }
+  const { id } = req.params;
+  const { data } = await getOneUser(id);
+  if (!data)
+    return res.status(404).json({ MessageError: "Usuário não cadastrado" });
+  return next();
 };

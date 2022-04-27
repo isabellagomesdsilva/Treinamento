@@ -1,13 +1,13 @@
 import { check } from "k6";
 import http from "k6/http";
 
-const timing = 5000;
+const timing = 1500;
 
 export const options = {
   stages: [
-    //{ duration: "15s", target: 10 },
-    //{ duration: "20s", target: 20 },
-    { duration: "10s", target: 100 },
+    { duration: "15s", target: 10 },
+    { duration: "20s", target: 20 },
+    { duration: "50s", target: 30 },
   ],
 };
 

@@ -65,7 +65,7 @@ exports.deleteUser = async (id) => {
   const { collection } = await connectMongodb("banco_de_dados", "users");
   const dUser = await collection.findOne({ _id: ObjectId(id) });
   const data = await collection.deleteOne({ _id: ObjectId(id) });
-  await collection.updateOne({ _id: ObjectId(id) }, { $set: { name, email } });
+  await collection.deleteOne({ _id: ObjectId(id) });
   return { data: dUser, status: 200 };
 } catch {
   console.log("Error model deleteUser -> ", err.message)

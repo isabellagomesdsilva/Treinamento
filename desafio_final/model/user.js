@@ -2,7 +2,11 @@ const { connectMongodb } = require("../database/connect");
 const { ObjectId } = require("mongodb");
 const axios = require("axios");
 const cheerio = require ('cheerio');
-const res = require("express/lib/response"); 
+const res = require("express/lib/response");
+const { connectRedis, getDataRedis, setDataRedis } = require("../database/redis");
+
+const keyPrimary = "posts"
+const keySecundary = "noticias"
 
 exports.getJsonPosts = async () => {
   try {
@@ -53,10 +57,24 @@ exports.getJsonNews = async (qty) => {
   }
 };
 
-exports.getPostsAll = async () => {
+exports.getPostsAll = async (page = 0, limit = 10) => {
   try {
+    const key = `posts - page: ${page} - limit: ${limit}`;
+    const response = await getDataRedis(keyPrimary, key);
+    if (response) return { data: response, status: 200 };
     const { collection } = await connectMongodb("desafio", "posts");
-    const data = await collection.find().toArray();
+    const skip = page > 0 ? page * limit : 0;
+    const [data] = await collection
+      .aggregate([
+        {
+          $facet: {
+            metaData: [{ $count: "total" }, { $addFields: { page } }],
+            data: [{ $skip: skip }, { $limit: limit }],
+          },
+        },
+      ])
+      .toArray();
+    await setDataRedis(keyPrimary, key, data);
     return { data, status: 200 };
   } catch (error) {
     return res
@@ -65,10 +83,24 @@ exports.getPostsAll = async () => {
   }
 };
 
-exports.getNewsAll = async () => {
+exports.getNewsAll = async (page = 0, limit = 10) => {
   try {
+    const key = `noticias - page: ${page} - limit: ${limit}`;
+    const response = await getDataRedis(keySecundary, key);
+    if (response) return { data: response, status: 200 };
     const { collection } = await connectMongodb("desafio", "noticias");
-    const data = await collection.find().toArray();
+    const skip = page > 0 ? page * limit : 0;
+    const [data] = await collection
+      .aggregate([
+        {
+          $facet: {
+            metaData: [{ $count: "total" }, { $addFields: { page } }],
+            data: [{ $skip: skip }, { $limit: limit }],
+          },
+        },
+      ])
+      .toArray();
+    await setDataRedis(keySecundary, key, data);
     return { data, status: 200 };
   } catch (error) {
     return res
@@ -79,8 +111,12 @@ exports.getNewsAll = async () => {
 
 exports.getOnePost = async (id) => {
   try {
+    const key = `posts - id: ${id}`;
+    const result = await getDataRedis(keyPrimary, key);
+    if (result) return { data: result, status: 200 };
     const { collection } = await connectMongodb("desafio", "posts");
     const data = await collection.findOne({ _id: ObjectId(id) });
+    await setDataRedis(keyPrimary, key, data);
     return { data, status: 200 };
   } catch (error) {
     return res
@@ -91,8 +127,12 @@ exports.getOnePost = async (id) => {
 
 exports.getNewsOne = async (id) => {
   try {
+    const key = `posts - id: ${id}`;
+    const result = await getDataRedis(keySecundary, key);
+    if (result) return { data: result, status: 200 };
     const { collection } = await connectMongodb("desafio", "noticias");
     const data = await collection.findOne({ _id: ObjectId(id) });
+    await setDataRedis(keyPrimary, key, data);
     return { data, status: 200 };
   } catch (error) {
     return res

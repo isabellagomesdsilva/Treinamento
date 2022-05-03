@@ -23,13 +23,13 @@ exports.validateError = (req, res, next) => {
 
 exports.validateGetAllPost = async(req, res, next) =>{
     const {data} = await getPostsAll()
-    if (!(data.length > 0)) return res.status(404).json({MessageError: "Não tem usuários cadastrados!"})
+    if (!(data.data.length > 0)) return res.status(404).json({MessageError: "Não tem usuários cadastrados!"})
     return next()
 }
 
 exports.validateGetAllNews = async(req, res, next) =>{
     const {data} = await getNewsAll()
-    if (!(data.length > 0)) return res.status(404).json({MessageError: "Não tem usuários cadastrados!"})
+    if (!(data.data.length > 0)) return res.status(404).json({MessageError: "Não tem usuários cadastrados!"})
     return next()
 }
 

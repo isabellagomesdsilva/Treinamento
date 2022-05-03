@@ -14,15 +14,25 @@ export const options = {
 export default function () {
   const req1 = {
     method: "GET",
-    url: "http://localhost:3000/posts",
+    url: "http://localhost:3000/posts/all",
   };
 
   const req2 = {
     method: "GET",
-    url: "http://localhost:3000/posts/62689f9ca4937397d86afecb",
+    url: "http://localhost:3000/posts/627154bdf3d1429048ffca47",
   };
 
-  /*const req3 = {
+  /* const req3 = {
+    method: "GET",
+    url: "http://localhost:3000/noticias/all",
+  };
+
+  const req4 = {
+    method: "GET",
+    url: "http://localhost:3000/noticias/627154b6f3d1429048ffca33",
+  }; */
+
+  /*const req5 = {
     method: "POST",
     url: "http://localhost:3000/posts",
     body: JSON.stringify({
@@ -34,7 +44,7 @@ export default function () {
     },
   };*/
 
-  /*const req4 = {
+  /*const req6 = {
     method: "POST",
     url: "http://localhost:3000/noticias",
     body: JSON.stringify({

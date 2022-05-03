@@ -4,7 +4,6 @@ const client = createClient();
 client.on('error', () =>undefined)
 
 const connectRedis = async () => {
-      
       await client.connect();
       await client.ping();
       return client

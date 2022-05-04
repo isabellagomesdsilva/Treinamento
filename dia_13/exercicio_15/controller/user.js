@@ -8,7 +8,7 @@ const {
 
 exports.getAll = async (req, res) => {
   try {
-    let { limit = 10, page = 0 } = req.query;
+    let { limit = 30, page = 0 } = req.query;
     const { data: retorno, status } = await getUsers(
       Number(page),
       Number(limit)

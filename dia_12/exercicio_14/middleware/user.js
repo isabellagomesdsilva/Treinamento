@@ -16,7 +16,7 @@ exports.validateCreate = [
 ];
 
 exports.validateGetAll = async (req, res, next) => {
-  const { data } = await getUsers();
+  const data = await getUsers();
   if (data.length == 0)
     return res
       .status(404)

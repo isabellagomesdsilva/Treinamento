@@ -31,7 +31,7 @@ exports.getUsers = async (page = 0, limit = 10) => {
     await client.set(key, JSON.stringify(data));
     return { data, status: 200 };
   } catch (error){
-    console.log("Error model getAll -> ", err.message);
+    console.log("Error model getAll -> ", error);
   }
 };
 exports.getOneUser = async (id) => {
@@ -45,7 +45,7 @@ exports.getOneUser = async (id) => {
     await client.set(key, JSON.stringify(data));
     return { data, status: 200 };
   } catch(error) {
-    console.log("Error model getOne -> ", err.message);
+    console.log("Error model getOne -> ", error);
   }
 };
 exports.putUser = async (id, { name, email }) => {
@@ -60,7 +60,7 @@ exports.putUser = async (id, { name, email }) => {
     );
     return { data: { _id: id, name, email }, status: 200 };
   } catch(error) {
-    console.log("Error model putUser -> ", error.message);
+    console.log("Error model putUser -> ", error);
   }
   
 };
@@ -74,8 +74,8 @@ exports.deleteUser = async (id) => {
     const data = await collection.deleteOne({ _id: ObjectId(id) });
     await collection.deleteOne({ _id: ObjectId(id) });
     return { data: dUser, status: 200 };
-  } catch {
-    console.log("Error model deleteUser -> ", error.message);
+  } catch(error) {
+    console.log("Error model deleteUser -> ", error);
   }
 };
 exports.getOneEmail = async (email) => {
@@ -89,6 +89,6 @@ exports.getOneEmail = async (email) => {
     await client.set(key, JSON.stringify(data));
     return { data, status: 200 };
   } catch(error) {
-    console.log("Error model getOneEmail -> ", error.message);
+    console.log("Error model getOneEmail ->", error);
   }
 };

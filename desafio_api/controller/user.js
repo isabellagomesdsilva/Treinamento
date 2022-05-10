@@ -1,15 +1,15 @@
 const {
   createUser,
-  getUsers,
+  getAllUsers,
   getOneUser,
   putUser,
   deleteUser,
 } = require("../model/user");
 
-exports.getAll = async (req, res) => {
+exports.getAllUsers = async (req, res) => {
   try {
     let { limit = 10, page = 0 } = req.query;
-    const { data: retorno, status } = await getUsers(
+    const { data: retorno, status } = await getAllUsers(
       Number(page),
       Number(limit)
     );
@@ -19,16 +19,7 @@ exports.getAll = async (req, res) => {
   }
 };
 
-exports.create = async (req, res) => {
-  try {
-    const { data: retorno, status } = await createUser(req.body);
-    return res.status(status).json(retorno);
-  } catch (error) {
-    return res.status(500).json({ MessageError: "Erro não esperado!" });
-  }
-};
-
-exports.getOne = async (req, res) => {
+exports.getOneUsers = async (req, res) => {
   try {
     const { data: retorno, status } = await getOneUser(req.params.id);
     return res.status(status).json(retorno);
@@ -37,7 +28,18 @@ exports.getOne = async (req, res) => {
   }
 };
 
-exports.put = async (req, res) => {
+exports.createUsers = async (req, res) => {
+  try {
+    const { data: retorno, status } = await createUser(req.body);
+    return res.status(status).json(retorno);
+  } catch (error) {
+    return res.status(500).json({ MessageError: "Erro não esperado!" });
+  }
+};
+
+
+
+/* exports.put = async (req, res) => {
   try {
     const { data: retorno, status } = await putUser(req.params.id, req.body);
     res.status(status).json(retorno);
@@ -53,4 +55,4 @@ exports.remove = async (req, res) => {
   } catch (error) {
     return res.status(500).json({ MessageError: "Erro não esperado!" });
   }
-};
+}; */

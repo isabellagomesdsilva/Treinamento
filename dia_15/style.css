@@ -1,8 +1,36 @@
 .bi.bi-trash3-fill{
     cursor: pointer;
+    position: absolute;
+    margin-left: 2em;
 }
 
 .bi.bi-pencil-square{
     cursor: pointer;
+    position: absolute;
 }
 
+.bi.bi-trash3-fill:hover{
+    background-color: rgb(233, 230, 230);
+}
+
+.bi.bi-pencil-square:hover{
+    background-color: rgb(233, 230, 230);
+}
+
+#buttonCad{
+    display: flex;
+    flex-direction: row-reverse;
+    margin-right: 0.5em;
+    margin-bottom: 2em;
+}
+
+#logo{
+    margin-top: 0.5em;
+    margin-left: 0.5em;
+    margin-bottom: -3em;
+}
+
+#tabela{
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+}

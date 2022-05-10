@@ -10,9 +10,16 @@
       integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
     <title>RedFox</title>
   </head>
   <body>
@@ -20,117 +27,271 @@
       <img
         src="https://i0.wp.com/redfox.tech/wp-content/uploads/2022/02/logo.png"
         alt="Logotipo RedFox"
+        id="logo"
       />
     </header>
     <main>
-        <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+      <div id="buttonCad">
+          <button
+            type="button"
+            class="btn btn-success"
+            data-bs-toggle="modal"
+            data-bs-target="#staticBackdrop"
+          >
             Cadastrar
           </button>
-          <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="staticBackdropLabel">Cadastro</h5>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <form>
-                    <div class="modal-body">
-                        <div class="mb-3">
-                            <label for="inputName" class="form-label">Nome</label>
-                            <input type="text" class="form-control" id="inputNameCadastro" placeholder="Nome">
-                          </div>
-                          <div class="mb-3">
-                            <label for="exampleFormControlInput1" class="form-label">Email</label>
-                            <input type="email" class="form-control" id="inputEmailCadastro" placeholder="name@example.com">
-                          </div>
-                          <button type="submit" class="btn btn-primary" data-bs-dismiss="modal" onclick="cadastrar()">Finalizar</button>
-                    </div>
-                </form>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Sair</button> 
-                </div>
-              </div>
-            </div>
-          </div>
+      </div>
 
-          <div class="modal fade" id="updateBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="staticBackdropLabel">Edição</h5>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      <div
+        class="modal fade"
+        id="staticBackdrop"
+        data-bs-backdrop="static"
+        data-bs-keyboard="false"
+        tabindex="-1"
+        aria-labelledby="staticBackdropLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="staticBackdropLabel">Cadastro</h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+
+            <div class="modal-body">
+              <form>
+                <div class="mb-3">
+                  <label for="inputName" class="form-label">Nome</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="inputNameCadastro"
+                    placeholder="Nome"
+                  />
                 </div>
-                <form>
-                    <div class="modal-body">
-                        <div class="mb-3">
-                            <label for="inputID" class="form-label">ID</label>
-                            <input type="text" class="form-control" id="inputID" readonly>
-                          </div>
-                        <div class="mb-3">
-                            <label for="inputName" class="form-label">Nome</label>
-                            <input type="text" class="form-control" id="inputName" placeholder="Nome">
-                          </div>
-                          <div class="mb-3">
-                            <label for="exampleFormControlInput1" class="form-label">Email</label>
-                            <input type="email" class="form-control" id="inputEmail" placeholder="name@example.com">
-                          </div>
-                        <button type="submit" class="btn btn-primary" onclick="update()">Confirmar</button>
-                    </div>
-                </form>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Sair</button>
-                  
+                <div class="mb-3">
+                  <label for="exampleFormControlInput1" class="form-label"
+                    >Email</label
+                  >
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="inputEmailCadastro"
+                    placeholder="name@example.com"
+                  />
                 </div>
-              </div>
+                <button
+                  type="button"
+                  class="btn btn-primary"
+                  data-bs-dismiss="modal"
+                  onclick="cadastrar()"
+                  id="buttonPost"
+                >
+                  Finalizar
+                </button>
+              </form>
+            </div>
+
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Sair
+              </button>
             </div>
           </div>
-          
-          <div class="modal fade" id="removeBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="staticBackdropLabel">Deletar</h5>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+      </div>
+
+      <div
+        class="modal fade"
+        id="updateBackdrop"
+        data-bs-backdrop="static"
+        data-bs-keyboard="false"
+        tabindex="-1"
+        aria-labelledby="staticBackdropLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="staticBackdropLabel">Edição</h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <form>
+              <div class="modal-body">
+                <div class="mb-3">
+                  <label for="inputID" class="form-label">ID</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="inputID"
+                    readonly
+                  />
                 </div>
+                <div class="mb-3">
+                  <label for="inputName" class="form-label">Nome</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="inputName"
+                    placeholder="Nome"
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="exampleFormControlInput1" class="form-label"
+                    >Email</label
+                  >
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="inputEmail"
+                    placeholder="name@example.com"
+                  />
+                </div>
+                <button
+                  type="button"
+                  class="btn btn-primary"
+                  onclick="update()"
+                  id="buttonUpdate"
+                >
+                  Confirmar
+                </button>
+              </div>
+            </form>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Sair
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="modal fade"
+        id="removeBackdrop"
+        data-bs-backdrop="static"
+        data-bs-keyboard="false"
+        tabindex="-1"
+        aria-labelledby="staticBackdropLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="staticBackdropLabel">Deletar</h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <form>
                 <div class="modal-body">
-                <form>
-                    <div class="modal-body">
-                        <div class="mb-3">
-                            <label for="inputID" class="form-label">ID</label>
-                            <input type="text" class="form-control" id="inputIDRemove" readonly>
-                          </div>
-                        <div class="mb-3">
-                            <label for="inputName" class="form-label">Nome</label>
-                            <input type="text" class="form-control" id="inputNameRemove" readonly>
-                          </div>
-                          <div class="mb-3">
-                            <label for="exampleFormControlInput1" class="form-label">Email</label>
-                            <input type="email" class="form-control" id="inputEmailRemove" readonly>
-                          </div>
-                          <p>Tem certeza que deseja excluir o usuário?</p>
-                        <button type="submit" class="btn btn-primary" onclick="deletar()">Confirmar</button>
-                    </div>
-                </form>
+                  <div class="mb-3">
+                    <label for="inputID" class="form-label">ID</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="inputIDRemove"
+                      readonly
+                    />
+                  </div>
+                  <div class="mb-3">
+                    <label for="inputName" class="form-label">Nome</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="inputNameRemove"
+                      readonly
+                    />
+                  </div>
+                  <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label"
+                      >Email</label
+                    >
+                    <input
+                      type="email"
+                      class="form-control"
+                      id="inputEmailRemove"
+                      readonly
+                    />
+                  </div>
+                  <p>Tem certeza que deseja excluir o usuário?</p>
+                  <button
+                    type="button"
+                    class="btn btn-primary"
+                    onclick="deletar()"
+                    id="buttonDelete"
+                  >
+                    Confirmar
+                  </button>
                 </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Sair</button>
-                </div>
-              </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Sair
+              </button>
             </div>
           </div>
+        </div>
+      </div>
 
+      <div id="tabela">
           <table class="table">
             <thead>
               <tr>
-                <th scope="col">ID</th>
-                <th scope="col">Nome</th>
-                <th scope="col">Email</th>
-                <th scope="col">Ações</th>
+                <th id="CSS" scope="col">ID</th>
+                <th id="CSS" scope="col">Nome</th>
+                <th id="CSS" scope="col">Email</th>
+                <th id="CSS" scope="col">Ações</th>
               </tr>
             </thead>
-            <tbody id="tdb">
-            </tbody>
-        </table>
+            <tbody id="tdb"></tbody>
+          </table>
+      </div>
+
+      <nav aria-label="...">
+        <ul class="pagination" style="justify-content: center;">
+          <li class="page-item" id ="buttonFirstPage">
+            <a class="page-link">First Page</a>
+          </li>
+          <li class="page-item disabled" id ="buttonPreviousPage">
+            <a class="page-link">Previous</a>
+          </li>
+          <li class="page-item" id ="buttonNextPage">
+            <a class="page-link">Next</a>
+          </li>
+          <li class="page-item" id ="buttonLastPage">
+            <a class="page-link">Last Page</a>
+          </li>
+        </ul>
+      </nav>
+
     </main>
     <script src="index.js"></script>
   </body>

@@ -1,0 +1,19 @@
+{
+  "name": "desafio_api",
+  "version": "1.0.0",
+  "description": "Desafio Final",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "mongo",
+    "backend"
+  ],
+  "author": "Isabella Gomes da Silva",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.1",
+    "mongodb": "^4.5.0"
+  }
+}

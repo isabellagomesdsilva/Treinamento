@@ -1,15 +1,15 @@
 const {
-  createUser,
-  getUsers,
-  getOneUser,
-  putUser,
-  deleteUser,
-} = require("../model/user");
+  createPokemon,
+  getAllPokemon,
+  getOnePokemon,
+  putPokemon,
+  deletePokemon,
+} = require("../model/pokemon");
 
-exports.getAll = async (req, res) => {
+exports.getAllPoke = async (req, res) => {
   try {
     let { limit = 10, page = 0 } = req.query;
-    const { data: retorno, status } = await getUsers(
+    const { data: retorno, status } = await getAllPokemon(
       Number(page),
       Number(limit)
     );
@@ -19,36 +19,36 @@ exports.getAll = async (req, res) => {
   }
 };
 
-exports.create = async (req, res) => {
+exports.getOnePoke = async (req, res) => {
   try {
-    const { data: retorno, status } = await createUser(req.body);
+    const { data: retorno, status } = await getOnePokemon(req.query.name);
     return res.status(status).json(retorno);
   } catch (error) {
     return res.status(500).json({ MessageError: "Erro não esperado!" });
   }
 };
 
-exports.getOne = async (req, res) => {
+exports.createPoke = async (req, res) => {
   try {
-    const { data: retorno, status } = await getOneUser(req.params.id);
+    const { data: retorno, status } = await createPokemon(req.body);
     return res.status(status).json(retorno);
   } catch (error) {
     return res.status(500).json({ MessageError: "Erro não esperado!" });
   }
 };
 
-exports.put = async (req, res) => {
+exports.putPoke = async (req, res) => {
   try {
-    const { data: retorno, status } = await putUser(req.params.id, req.body);
+    const { data: retorno, status } = await putPokemon(req.params.id, req.body);
     res.status(status).json(retorno);
   } catch (error) {
     return res.status(500).json({ MessageError: "Erro não esperado!" });
   }
 };
 
-exports.remove = async (req, res) => {
+exports.removePoke = async (req, res) => {
   try {
-    const { data: retorno, status } = await deleteUser(req.params.id);
+    const { data: retorno, status } = await deletePokemon(req.params.id);
     return res.status(status).json(retorno);
   } catch (error) {
     return res.status(500).json({ MessageError: "Erro não esperado!" });

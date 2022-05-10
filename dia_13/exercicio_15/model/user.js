@@ -9,7 +9,7 @@ exports.createUser = async ({ name, email }) => {
   const { insertedId } = await collection.insertOne({ name, email });
   return { data: { _id: insertedId, name, email }, status: 201 };
 };
-exports.getUsers = async (page = 0, limit = 30) => {
+exports.getUsers = async (page = 0, limit = 10) => {
   /*
     - verifica no cache primeiro para depois ir no banco de dados
   */

@@ -1,0 +1,44 @@
+@font-face {
+  font-family: RobotoAll;
+  src: url(../../../assets/fonts/Roboto/Roboto-Medium.ttf);
+}
+.HeaderAll {
+  font-family: RobotoAll;
+  color: #154a86;
+  position: absolute;
+  left: 22%;
+  top: 6%;
+  font-size: 3vh;
+  letter-spacing: 0.03em;
+}
+.barraPesquisa {
+  position: absolute;
+  left: 22%;
+  top: 23%;
+}
+.labelSearch {
+  display: flex;
+  flex-direction: row;
+  width: 420%;
+}
+.inputSearch {
+  width: 150%;
+  border-style: none;
+  background-color: #f4f4f4;
+  height: 7vh;
+  margin-right: 3%;
+  box-shadow: 0px 6px 8px rgb(0 0 0 / 7%);
+  border-radius: 27px;
+}
+.buttonSearch {
+  width: 25%;
+  border-radius: 25px;
+  border-style: none;
+  background-color: #bd2c25;
+  color: white;
+  font-family: RobotoAll;
+}
+::placeholder{
+color: #B9B9B9;
+padding: 10%;
+}

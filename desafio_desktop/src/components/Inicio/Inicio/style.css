@@ -1,0 +1,138 @@
+@font-face {
+  font-family: Roboto-Bold;
+  src: url(../../../assets/fonts/Roboto/Roboto-Bold.ttf)
+}
+.tela {
+  display: flex;
+  height: 100vh;
+}
+.menu {
+  display: flex;
+  background-color: #bd2c25;
+  height: 100vh;
+  width: 252px;
+}
+.menuGeral {
+  z-index: 0;
+}
+.buttons {
+  display: flex;
+  position: absolute;
+  flex-direction: column;
+  z-index: 1;
+  top: 40%;
+  left: 4.5%;
+}
+.button1 {
+  margin-bottom: 25%;
+  background-color: transparent;
+  border-style: none;
+  color: white;
+  font-family: Roboto-Bold;
+  cursor: pointer;
+  font-size: 2.4vh;
+}
+.button1:hover {
+    color: yellow
+}
+.button2 {
+  margin-bottom: 25%;
+  background-color: transparent;
+  border-style: none;
+  color: white;
+  font-family: Roboto-Bold;
+  cursor: pointer;
+  font-size: 2.4vh;
+}
+.button2:hover {
+    color: yellow
+}
+.button3 {
+  margin-bottom: 25%;
+  background-color: transparent;
+  border-style: none;
+  color: white;
+  font-family: Roboto-Bold;
+  cursor: pointer;
+  font-size: 2.4vh;
+}
+.button3:hover {
+    color: yellow
+}
+.button4 {
+  margin-bottom: 25%;
+  background-color: transparent;
+  border-style: none;
+  color: white;
+  font-family: Roboto-Bold;
+  cursor: pointer;
+  font-size: 2.4vh;
+}
+.button4:hover {
+    color: yellow
+}
+.button5 {
+  margin-bottom: 50%;
+  background-color: transparent;
+  border-style: none;
+  color: white;
+  font-family: Roboto-Bold;
+  cursor: pointer;
+  font-size: 2.4vh;
+}
+.button5:hover {
+    color: yellow
+}
+.logoPokeAll {
+  position: absolute;
+  height: 61.7px;
+  width: 168px;
+  top: 12%;
+  left: 2.7%;
+  z-index: 1;
+}
+.logoRed1All {
+  position: absolute;
+  height: 23px;
+  width: 17px;
+  left: 7%;
+  top: 22.5%;
+}
+.logoRed2All {
+  position: absolute;
+  height: 18.97px;
+  width: 14.26px;
+  left: 7.12%;
+  top: 22.964%;
+}
+.logoRed3All {
+  position: absolute;
+  height: 19.19px;
+  width: 8.5px;
+  left: 8.6%;
+  top: 23.2%;
+}
+.logoRed4All {
+  position: absolute;
+  height: 12.74px;
+  width: 12.76px;
+  left: 9.3%;
+  top: 24%;
+  border-radius: 0px;
+}
+.logoRed5All {
+  position: absolute;
+  height: 12.74px;
+  width: 12.88px;
+  left: 10.3%;
+  top: 24.13%;
+  border-radius: 0px;
+}
+.logoRed6All {
+  position: absolute;
+  height: 5.20px;
+  width: 5.21px;
+  left: 10.8%;
+  top: 25.4%;
+  border-radius: 0px;
+}

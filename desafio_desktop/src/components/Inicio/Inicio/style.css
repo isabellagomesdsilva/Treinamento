@@ -1,16 +1,17 @@
 @font-face {
   font-family: Roboto-Bold;
-  src: url(../../../assets/fonts/Roboto/Roboto-Bold.ttf)
+  src: url(../../../assets/fonts/Roboto/Roboto-Bold.ttf);
 }
 .tela {
-  display: flex;
   height: 100vh;
+  display: flex;
+  width: 100%;
 }
 .menu {
-  display: flex;
   background-color: #bd2c25;
   height: 100vh;
-  width: 252px;
+  width: 18.7%;
+  display: flex;
 }
 .menuGeral {
   z-index: 0;
@@ -22,6 +23,7 @@
   z-index: 1;
   top: 40%;
   left: 4.5%;
+  align-items: flex-start;
 }
 .button1 {
   margin-bottom: 25%;
@@ -33,7 +35,7 @@
   font-size: 2.4vh;
 }
 .button1:hover {
-    color: yellow
+  color: yellow;
 }
 .button2 {
   margin-bottom: 25%;
@@ -45,7 +47,7 @@
   font-size: 2.4vh;
 }
 .button2:hover {
-    color: yellow
+  color: yellow;
 }
 .button3 {
   margin-bottom: 25%;
@@ -57,7 +59,7 @@
   font-size: 2.4vh;
 }
 .button3:hover {
-    color: yellow
+  color: yellow;
 }
 .button4 {
   margin-bottom: 25%;
@@ -69,7 +71,7 @@
   font-size: 2.4vh;
 }
 .button4:hover {
-    color: yellow
+  color: yellow;
 }
 .button5 {
   margin-bottom: 50%;
@@ -81,7 +83,7 @@
   font-size: 2.4vh;
 }
 .button5:hover {
-    color: yellow
+  color: yellow;
 }
 .logoPokeAll {
   position: absolute;
@@ -130,7 +132,7 @@
 }
 .logoRed6All {
   position: absolute;
-  height: 5.20px;
+  height: 5.2px;
   width: 5.21px;
   left: 10.8%;
   top: 25.4%;

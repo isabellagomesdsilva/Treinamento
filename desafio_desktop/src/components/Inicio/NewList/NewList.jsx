@@ -83,7 +83,6 @@ export function NewList() {
       target: { value },
     } = event;
     setPersonName(
-      // On autofill we get a stringified value.
       typeof value === "string" ? value.split(",") : value
     );
   };
@@ -120,7 +119,6 @@ export function NewList() {
             <Typography sx={{ mt: 2 }}>
               Que pokémons você deseja adicionar nessa lista?
             </Typography>
-            <InputLabel id='demo-multiple-checkbox-label'>Tag</InputLabel>
             <Select
               labelId='demo-multiple-checkbox-label'
               id='demo-multiple-checkbox'

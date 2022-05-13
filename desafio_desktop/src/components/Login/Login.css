@@ -114,24 +114,13 @@
     left: 8%;
     top: 62%;
   }
-  .textInput3Login {
-    position: absolute;
-    color: white;
-    font-family: Roboto;
-    font-size: 15px;
-    width: 52%;
-    display: flex;
-    flex-direction: column;
-    align-content: center;
-    left: 8%;
-    top: 78%;
-  }
   .input1Login {
     border-color: white;
     border-style: none;
     height: 40px;
     width: 300px;
     border-radius: 37px;
+    padding-left: 3%;
   }
   .input2Login {
     border-color: white;
@@ -140,14 +129,7 @@
     width: 300px;
     border-radius: 37px;
     margin-top: -10px;
-  }
-  .input3Login {
-    border-color: white;
-    border-style: none;
-    height: 40px;
-    width: 300px;
-    border-radius: 37px;
-    margin-top: -10px;
+    padding-left: 3%;
   }
   .textLabel1Login {
     position: absolute;
@@ -155,11 +137,6 @@
     top: -40px;
   }
   .textLabel2Login {
-    position: absolute;
-    left: 18px;
-    top: -48.5px;
-  }
-  .textLabel3Login {
     position: absolute;
     left: 18px;
     top: -48.5px;

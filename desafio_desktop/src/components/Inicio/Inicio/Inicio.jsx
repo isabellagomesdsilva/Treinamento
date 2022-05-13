@@ -7,13 +7,18 @@ import logoRed3 from "../../../assets/logoRed3P.png";
 import logoRed4 from "../../../assets/logoRed4P.png";
 import logoRed5 from "../../../assets/logoRed5P.png";
 import logoRed6 from "../../../assets/logoRed6P.png";
-import {AllPokemons} from '../AllPokemons/AllPokemons';
-import {MyPokemons} from "../MyPokemons/MyPokemons";
-import {MyLists} from "../MyLists/MyLists";
+import { AllPokemons } from "../AllPokemons/AllPokemons";
+import { MyPokemons } from "../MyPokemons/MyPokemons";
+import { MyLists } from "../MyLists/MyLists";
+import { NewList } from "../NewList/NewList";
+import { NewPoke } from "../NewPoke/NewPoke";
 import "./style.css";
+
 
 export function Inicio() {
   const [Render, setRender] = useState("AllPokemons");
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
   return (
     <>
       <div className='tela'>
@@ -54,24 +59,34 @@ export function Inicio() {
             </button>
             <button
               className='button4'
-              onClick={() => {alert("CRIAR NOVA LISTA")}}
+              onClick={() => {
+                setRender("NewList");
+              }}
             >
               Criar nova lista
             </button>
             <button
               className='button5'
-              onClick={() => {alert("MODAL CRIAR NOVO POKEMON")}}
+              onClick={() => {
+                setRender("NewPoke");
+              }}
             >
               Criar novo pokemon
             </button>
             <Link to='/'>Sair</Link>
           </div>
         </div>
-        {
-          Render == "AllPokemons" ? <AllPokemons/> :
-          Render == "MyLists" ? <MyLists/> :
-          Render == "MyPokemons" ? <MyPokemons/> : null
-        }
+        {Render == "AllPokemons" ? (
+          <AllPokemons />
+        ) : Render == "MyLists" ? (
+          <MyLists />
+        ) : Render == "MyPokemons" ? (
+          <MyPokemons />
+        ) : Render == "NewList" ? (
+          <NewList />
+        ) : Render == "NewPoke" ? (
+          <NewPoke />
+        ) : null}
       </div>
     </>
   );

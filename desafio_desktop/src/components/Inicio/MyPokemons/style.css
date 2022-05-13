@@ -1,0 +1,121 @@
+@font-face {
+  font-family: RobotoMP;
+  src: url(../../../assets/fonts/Roboto/Roboto-Medium.ttf);
+}
+.HeaderMP {
+  font-family: RobotoMP;
+  color: #154a86;
+  margin-left: 2%;
+  margin-top: 2%;
+  margin-bottom: 1%;
+  font-size: 3vh;
+  letter-spacing: 0.03em;
+  height: 12%;
+}
+.barraPesquisaMP {
+  width: 91%;
+  margin-left: 2%;
+}
+.labelSearchMP {
+  display: flex;
+  width: 100%;
+}
+.iconLupaMP {
+  margin: 0.8%;
+  position: absolute;
+}
+.inputSearchMP {
+  width: 100%;
+  border-style: none;
+  background-color: #f4f4f4;
+  height: 7vh;
+  margin-right: 3%;
+  box-shadow: 0px 6px 8px rgb(0 0 0 / 7%);
+  border-radius: 27px;
+}
+.buttonSearchMP {
+  width: 25%;
+  border-radius: 25px;
+  border-style: none;
+  background-color: #bd2c25;
+  color: white;
+  font-family: RobotoMP;
+}
+::placeholder {
+  color: #b9b9b9;
+  padding: 10%;
+}
+.buttonListMP {
+  background-color: transparent;
+  border-style: none;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  margin-top: 1.5%;
+  margin-left: 2.5%;
+  margin-bottom: 1%;
+}
+.iconBarraMP {
+  width: 3.8vh;
+  padding: 7%;
+}
+.buttonFilterMP {
+  background-color: transparent;
+  border-style: none;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  margin-top: 1.5%;
+  margin-left: 2.5%;
+  margin-bottom: 1%;
+}
+.iconFilterMP {
+  width: 3.8vh;
+  padding: 7%;
+}
+.cardsPokesMP {
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: 100%;
+}
+.MyPokes {
+  display: flex;
+  width: 81.2%;
+  flex-direction: column;
+  height: 100%;
+}
+.filtersMP {
+  display: flex;
+  flex-direction: row;
+}
+.visãoBarraMP {
+  margin-left: 5%;
+  width: 13%;
+  margin-top: 1%;
+  display: flex;
+  align-items: center;
+}
+.visãoCardMP {
+  margin-left: 5%;
+  width: 13%;
+  margin-top: 1%;
+  display: flex;
+  align-items: center;
+}
+.buttonAFilterMP {
+  display: flex;
+  align-self: center;
+  border-style: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+.advancedFilterMP {
+  margin-left: 61%;
+  margin-top: 1%;
+}
+.imgFilterAMP {
+  width: 3.8vh;
+  padding: 4%;
+}

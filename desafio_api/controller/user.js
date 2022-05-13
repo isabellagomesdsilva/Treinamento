@@ -1,14 +1,12 @@
 const {
   createUser,
   getAllUsers,
-  getOneUser,
-  putUser,
-  deleteUser,
+  getOneEmail
 } = require("../model/user");
 
 exports.getAllUsers = async (req, res) => {
   try {
-    let { limit = 10, page = 0 } = req.query;
+    let { page = 0, limit = 10 } = req.query;
     const { data: retorno, status } = await getAllUsers(
       Number(page),
       Number(limit)
@@ -21,8 +19,8 @@ exports.getAllUsers = async (req, res) => {
 
 exports.getOneUsers = async (req, res) => {
   try {
-    const { data: retorno, status } = await getOneUser(req.params.id);
-    return res.status(status).json(retorno);
+    const { data, status } = await getOneEmail(req.query.email);
+    return res.status(status).json(data);
   } catch (error) {
     return res.status(500).json({ MessageError: "Erro não esperado!" });
   }

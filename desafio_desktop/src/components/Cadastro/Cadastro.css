@@ -132,6 +132,7 @@
     height: 40px;
     width: 300px;
     border-radius: 37px;
+    padding-left: 3%;
   }
   .input2Cadastro {
     border-color: white;
@@ -140,6 +141,7 @@
     width: 300px;
     border-radius: 37px;
     margin-top: -10px;
+    padding-left: 3%;
   }
   .input3Cadastro {
     border-color: white;
@@ -148,6 +150,7 @@
     width: 300px;
     border-radius: 37px;
     margin-top: -10px;
+    padding-left: 3%;
   }
   .textLabel1Cadastro {
     position: absolute;

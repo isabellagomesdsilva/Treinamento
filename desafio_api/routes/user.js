@@ -1,35 +1,32 @@
-const { getAllUsers, createUsers, getOneUsers } = require("../controller/user");
-const { getAllPoke, createPoke, getOnePoke, putPoke, removePoke } = require("../controller/pokemon");
-/* const {
-  validateCreate,
+const { getAllUsers, createUsers, getOneUsers} = require("../controller/user");
+const {
+  getAllPoke,
+  createPoke,
+  getOnePoke,
+  putPoke,
+  removePoke,
+} = require("../controller/pokemon");
+const {
+  validateCreateUser,
   validateErrorUser,
-  paramsId,
-  validateFoundById,
   validateDuplicatedEmailUser,
-  validateGetAll,
-} = require("../middleware/user"); */
+  validateCreatePokes,
+  validateNotEmailUser,
+  validateNamePoke
+} = require("../middleware/user");
 
 module.exports = (app) => {
-  app.get("/user", /* validateGetAll, */ getAllUsers);
-  app.get("/pokemon/all", /* validateGetAll, */ getAllPoke);
-  app.get("/user/:id",/*  paramsId, validateErrorUser, validateFoundById, */ getOneUsers);
-  app.get("/pokemon",/*  paramsId, validateErrorUser, validateFoundById, */ getOnePoke);
-  app.post("/user", /* validateCreate, validateErrorUser, */ createUsers);
-  app.post("/pokemon", /* validateCreate, validateErrorUser, */ createPoke);
-  app.put(
-    "/pokemon/:id",
-   /*  paramsId,
-    validateCreate,
+  app.get("/user/all", getAllUsers);
+  app.get("/pokemon/all", getAllPoke);
+  app.get(
+    "/user",
     validateErrorUser,
-    validateDuplicatedEmailUser,
-    validateFoundById, */
-    putPoke
+    validateNotEmailUser,
+    getOneUsers
   );
-  app.delete(
-    "/pokemon/:id",
-    /* paramsId,
-    validateErrorUser,
-    validateFoundById, */
-    removePoke
-  );
+  app.get("/pokemon", getOnePoke);
+  app.post("/user", validateCreateUser, validateErrorUser, validateDuplicatedEmailUser, createUsers);
+  app.post("/pokemon", validateCreatePokes, validateNamePoke, createPoke);
+  app.put("/pokemon/:id", validateNamePoke, putPoke);
+  app.delete("/pokemon/:id", removePoke);
 };

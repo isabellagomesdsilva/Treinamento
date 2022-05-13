@@ -2,7 +2,7 @@ const { connectMongodb } = require("../database/connect");
 const { ObjectId } = require("mongodb");
 
 exports.getAllUsers = async (page = 0, limit = 10) => {
-  const { collection } = await connectMongodb("pokedex", "pokeusers");
+  const  collection  = await connectMongodb("pokedex", "pokeusers");
   const skip = page > 0 ? page * limit : 0;
   const [data] = await collection
     .aggregate([
@@ -14,23 +14,23 @@ exports.getAllUsers = async (page = 0, limit = 10) => {
       },
     ])
     .toArray();
-  return { data, status: 200 };
+  return { data, status: 200 }
 };
 
 exports.getOneUser = async (id) => {
-  const { collection } = await connectMongodb("pokedex", "pokeusers");
-  const data = await collection.findOne({ _id: ObjectId(id) });
+  const collection = await connectMongodb("pokedex", "pokeusers");
+  const data = await collection.findOne({ name: `${id}` });
   return { data, status: 200 };
 };
 
 exports.getOneEmail = async (email) => {
-  const { collection } = await connectMongodb("pokedex", "pokeusers");
-  const data = await collection.findOne({ email: email });
+  const collection  = await connectMongodb("pokedex", "pokeusers");
+  const data = await collection.findOne({ email: `${email}` });
   return { data, status: 200 };
 };
 
 exports.createUser = async ({ email, senha }) => {
-  const { collection } = await connectMongodb("pokedex", "pokeusers");
+  const  collection  = await connectMongodb("pokedex", "pokeusers");
   const { insertedId } = await collection.insertOne({ email, senha });
   return { data: { _id: insertedId, email, senha }, status: 201 };
 };

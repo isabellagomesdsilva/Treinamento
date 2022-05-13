@@ -6,7 +6,7 @@ import { Inicio } from "./components/Inicio/Inicio/Inicio";
 
 export function App() {
   return (
-    <div class='routes'>
+    <div className='routes' style={{width: 100 + "%"}}>
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='register' element={<Register />} />

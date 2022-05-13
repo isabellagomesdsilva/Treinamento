@@ -1,4 +1,5 @@
 import React from "react";
+import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import logoPoke from "../../assets/logo.png";
 import logoRed1 from "../../assets/logoRed1.png";
@@ -9,11 +10,27 @@ import logoRed5 from "../../assets/logoRed5.png";
 import logoRed6 from "../../assets/logoRed6.png";
 import lineHome from "../../assets/lineHome.png";
 import elipse from "../../assets/elipseHome.png";
-import charmander from "../../assets/login.jpg";
+import charmander from "../../assets/cadastro.jpg";
 import "./Cadastro.css";
 
+
+
 export function Register() {
-  const cadastrar = true
+  async function cadastrar(){
+    let email = document.querySelector('#inputEmail').value
+    let senha = document.querySelector('#inputSenha').value
+    let senhaCheck = document.querySelector('#inputSenhaCheck').value
+    if (senha!=senhaCheck){
+      return alert("As senhas não coincidem")
+    }
+    const user = {email, senha}
+    const response = await axios.post("http://localhost:5000/user", user)
+    if (response.status==201){
+      return response.status
+    }else{
+      return null
+    }
+  }
   const navigate = useNavigate();
   return (
     <>
@@ -37,25 +54,25 @@ export function Register() {
               </a>
               <label className='textInput1Cadastro'>
                 <p className='textLabel1Cadastro'>Email</p>
-                <input type='text' name='name' className='input1Cadastro' />
+                <input id="inputEmail"type='text' name='name' className='input1Cadastro' />
               </label>
               <label className='textInput2Cadastro'>
                 <p className='textLabel2Cadastro'>Senha</p>
-                <input type='text' name='name' className='input2Cadastro' />
+                <input id="inputSenha" type='password' name='name' className='input2Cadastro' />
               </label>
               <label className='textInput3Cadastro'>
                 <p className='textLabel3Cadastro'>Confirme sua senha</p>
-                <input type='text' name='name' className='input3Cadastro' />
+                <input id="inputSenhaCheck" type='password' name='name' className='input3Cadastro' />
               </label>
               <a href='' className='senhaCadastro'>
                 <nav>
                   <Link to='recpassword'>Esqueci minha senha</Link>
                 </nav>
               </a>
-                  <nav>
-                    <button onClick={() => {cadastrar ? navigate("/inicio") : null}} className="buttonLogin2">Entrar</button>
-                  </nav>
             </form>
+                  <div>
+                    <button onClick={async() => {await cadastrar()=="201" ? navigate("/inicio") : null}} className="buttonLogin2">Entrar</button>
+                  </div>
           </div>
         </div>
         <div className='login'>

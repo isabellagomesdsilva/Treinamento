@@ -8,7 +8,7 @@ const {
 
 exports.getAllPoke = async (req, res) => {
   try {
-    let { limit = 10, page = 0 } = req.query;
+    let { page = 0, limit = 10  } = req.query;
     const { data: retorno, status } = await getAllPokemon(
       Number(page),
       Number(limit)

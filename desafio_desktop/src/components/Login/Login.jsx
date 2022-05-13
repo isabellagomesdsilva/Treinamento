@@ -11,10 +11,22 @@ import lineHome from "../../assets/lineHome.png";
 import elipse from "../../assets/elipseHome.png";
 import pikachu from "../../assets/login.jpg";
 import "./Login.css";
+import axios from "axios";
 
 export function Home() {
-  const entrar = true
-  const navigate = useNavigate()
+  async function login() {
+    let email = document.querySelector("#Email").value;
+    let senha = document.querySelector("#Senha").value;
+    const user = await axios.get(`http://localhost:5000/user/?email=${email}`);
+    if (!user.data) {
+      return alert("Usuário não encontrado");
+    }
+    if (user.data.senha != senha) {
+      return alert("Senha incorreta");
+    }
+    return user.status;
+  }
+  const navigate = useNavigate();
   return (
     <>
       <div className='fundoLogin'>
@@ -32,26 +44,43 @@ export function Home() {
             <form>
               <label className='textInput1Login'>
                 <p className='textLabel1Login'>Usuário</p>
-                <input type='text' name='name' className='input1Login' />
+                <input
+                  id='Email'
+                  type='text'
+                  name='name'
+                  className='input1Login'
+                />
               </label>
               <label className='textInput2Login'>
                 <p className='textLabel2Login'>Senha</p>
-                <input type='text' name='name' className='input2Login' />
+                <input
+                  id='Senha'
+                  type='password'
+                  name='name'
+                  className='input2Login'
+                />
               </label>
               <a href='' className='senhaLogin'>
                 <nav>
                   <Link to='recpassword'>Esqueci minha senha</Link>
                 </nav>
               </a>
-                  <nav>
-                  <button onClick={() => {entrar ? navigate("/inicio") : null}} className="buttonLogin">Entrar</button>
-                  </nav>
+
               <a href='' className='cadastroLogin'>
                 <nav>
                   <Link to='register'>Fazer cadastro</Link>
                 </nav>
               </a>
             </form>
+            <div>
+              <button
+                onClick={async () => {
+                  (await login()) == "200" ? navigate("/inicio") : null;
+                }} className="buttonLogin"
+              >
+                Entrar
+              </button>
+            </div>
           </div>
         </div>
         <div className='login'>

@@ -6,6 +6,8 @@ import {StackNavigationProp} from '@react-navigation/stack';
 
 import {Log} from './Log';
 
+import  {BackgroundImageLogin}  from '../../components/BackgroundImageLogin';
+
 const imgLogo = require('../../assets/Images/Logo.png');
 const imgLogoGoogle = require('../../assets/Images/LogoGoogle.png');
 const imgLogoFb = require('../../assets/Images/LogoFb.png');
@@ -22,7 +24,7 @@ export function Access() {
   const {navigate} = useNavigation<navLog>();
   return (
     <View style={styles.container}>
-      <Image style={styles.imgLogo} source={imgLogo}/>
+      <BackgroundImageLogin />
       <View style={styles.content}>
         <Pressable onPress={() => Alert.alert('Connectar com o Google')} style={styles.buttonGoogle}>
         <Image style={styles.imgLogoGoogle} source={imgLogoGoogle}/>

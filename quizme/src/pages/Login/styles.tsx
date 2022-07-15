@@ -5,6 +5,9 @@ export const styles = StyleSheet.create({
   container: {
     display: 'flex',
     alignItems: 'center',
+    zIndex: 1,
+    
+    backgroundColor: "#020A32"
   },
   content: {},
   footer: {},

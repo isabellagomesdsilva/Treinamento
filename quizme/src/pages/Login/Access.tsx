@@ -6,7 +6,7 @@ import {StackNavigationProp} from '@react-navigation/stack';
 
 import {Log} from './Log';
 
-import  {BackgroundImageLogin}  from '../../components/BackgroundImageLogin';
+import  {BackgroundImageLogin, Button}  from '../../components';
 
 const imgLogo = require('../../assets/Images/Logo.png');
 const imgLogoGoogle = require('../../assets/Images/LogoGoogle.png');
@@ -24,8 +24,9 @@ export function Access() {
   const {navigate} = useNavigation<navLog>();
   return (
     <View style={styles.container}>
-      <BackgroundImageLogin />
-      <View style={styles.content}>
+      {/*<BackgroundImageLogin />*/}
+      <Button label="Logar conta QuizzMe!" options={true}/>
+      <View style={styles.content}> 
         <Pressable onPress={() => Alert.alert('Connectar com o Google')} style={styles.buttonGoogle}>
         <Image style={styles.imgLogoGoogle} source={imgLogoGoogle}/>
         <Image style={styles.divider} source={dividerRed}/>

@@ -96,13 +96,15 @@ export const styles = StyleSheet.create({
   button: {
     backgroundColor: '#FFC90B',
     width: '76%',
-    height: '17%',
+    paddingBottom: 10,
+    paddingTop: 10,
     borderRadius: 10,
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
     marginBottom: '5%',
     justifyContent: 'center',
+    
   },
   buttonText: {
     color: '#5970E7',

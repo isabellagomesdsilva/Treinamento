@@ -5,77 +5,11 @@ export const styles = StyleSheet.create({
   container: {
     display: 'flex',
     alignItems: 'center',
-    zIndex: 1,
-    
-    backgroundColor: "#020A32"
+    backgroundColor: '#333B65',
+    height: '100%',
   },
   content: {},
   footer: {},
-  imgLogo: {
-    marginTop: '30%',
-    marginBottom: '25%',
-  },
-  buttonGoogle: {
-    backgroundColor: '#F1F6FB',
-    width: 300,
-    height: 50,
-    borderColor: '#EA4335',
-    borderWidth: 2,
-    borderRadius: 10,
-    display: 'flex',
-    flexDirection: 'row',
-    alignItems: 'center',
-    marginBottom: '5%',
-  },
-  buttonLabelGoogle: {
-    color: '#EA4335',
-    fontSize: 21,
-    fontFamily: "YanoneKaffeesatz-Regular"
-  },
-  imgLogoGoogle: {
-    marginRight: '5%',
-    marginLeft: '5%',
-  },
-  divider: {
-    marginRight: '5%',
-  },
-  buttonFacebook: {
-    backgroundColor: '#F1F6FB',
-    width: 300,
-    height: 50,
-    borderColor: '#475993',
-    borderWidth: 2,
-    borderRadius: 10,
-    display: 'flex',
-    flexDirection: 'row',
-    alignItems: 'center',
-    marginBottom: '5%',
-  },
-  buttonLabelFacebook: {
-    color: '#475993',
-    fontSize: 21,
-    fontFamily: "YanoneKaffeesatz-Regular"
-  },
-  imgLogoFb: {
-    marginRight: '4%',
-    marginLeft: '4%',
-  },
-  buttonLogin: {
-    backgroundColor: '#FFC90B',
-    width: 300,
-    height: 75,
-    borderRadius: 10,
-    display: 'flex',
-    flexDirection: 'row',
-    alignItems: 'center',
-    marginBottom: '5%',
-    justifyContent: 'center',
-  },
-  buttonLoginLabel: {
-    color: '#5970E7',
-    fontSize: 28,
-    fontFamily: "YanoneKaffeesatz-Bold"
-  },
   buttonCreate:{
     alignItems:  "center"
   },

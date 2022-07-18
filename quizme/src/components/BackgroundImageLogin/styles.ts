@@ -7,6 +7,7 @@ export const styles = StyleSheet.create({
     width: '100%',
     display: 'flex',
     alignItems: 'center',
+    position: 'absolute',
   },
   imgLogo: {
     marginTop: '30%',

@@ -26,19 +26,12 @@ const LoginSchema = yup.object().shape({
   email: yup
     .string()
     .email('Email inválido')
-    .required('Campo Obrigatório')
-    .matches(
-      /^[A-Za-z0-9._%+-]+@redfox.tech$/,
-      'O email não atende aos requisitos',
-    ),
+    .required('Campo Obrigatório'),
   password: yup
     .string()
     .required('Campo Obrigatório')
     .min(8, 'A senha deve ter no mínimo 8 caracteres')
-    .matches(
-      /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-])/,
-      'A senha não atende aos requisitos',
-    ),
+    
 });
 
 const initialValues = {

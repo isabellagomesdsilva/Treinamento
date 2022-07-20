@@ -104,7 +104,6 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
     marginBottom: '5%',
     justifyContent: 'center',
-    
   },
   buttonText: {
     color: '#5970E7',

@@ -31,7 +31,6 @@ const LoginSchema = yup.object().shape({
     .string()
     .required('Campo Obrigatório')
     .min(8, 'A senha deve ter no mínimo 8 caracteres')
-    
 });
 
 const initialValues = {

@@ -27,10 +27,6 @@ class Product {
     this.productPrice = productPrice;
     this.productQuantity = productQuantity;
   }
-
- valueTotal(): number{
-    return this.productPrice * this.productQuantity
-  }
 }
 
 class User {
@@ -69,12 +65,11 @@ class User {
           productName: "Notebook",
           productPrice: 1000,
           productQuantity: 2,
-          valueTotal: 2000
-        },{
+        },
+        {
           productName: "TV",
           productPrice: 2000,
           productQuantity: 3,
-          valueTotal: 6000
         },
       ],
     },
@@ -89,12 +84,11 @@ class User {
           productName: "Notebook",
           productPrice: 2000,
           productQuantity: 2,
-          valueTotal: 4000
-        },{
+        },
+        {
           productName: "Celular",
           productPrice: 2000,
           productQuantity: 5,
-          valueTotal: 10000
         },
       ],
     },
@@ -126,24 +120,29 @@ class User {
     age: number,
     email: string,
     clientName: string,
-    clientLastName?: string,
+    clientLastName?: string
   ) {
     const userUpdate = this.userBase.findIndex((user) => user.id == id);
-    const updateName = this.userBase[userUpdate].clientName = clientName;
-    const updateLastName = this.userBase[userUpdate].clientLastName =
-      clientLastName;
-    const updateAge = this.userBase[userUpdate].age = age;
-    const updateEmail = this.userBase[userUpdate].email = email;
-    return userUpdate
+    const updateName = (this.userBase[userUpdate].clientName = clientName);
+    const updateLastName = (this.userBase[userUpdate].clientLastName =
+      clientLastName);
+    const updateAge = (this.userBase[userUpdate].age = age);
+    const updateEmail = (this.userBase[userUpdate].email = email);
+    return userUpdate;
   }
 
-  expansiveProduct(){
+  valueTotal(product: IProduct): number {
+    return product.productPrice * product.productQuantity;
+  }
+
+  expansiveProduct() {
     let higherValue = this.product[0];
-    for(let i = 0; i< this.product.length; i++){
-      if(this.product[i].valueTotal() > higherValue.valueTotal()){
-        higherValue = this.product[i]
+    for (let i = 0; i < this.product.length; i++) {
+      if (this.valueTotal(this.product[i]) > this.valueTotal(higherValue)) {
+        higherValue = this.product[i];
       }
     }
+    return higherValue;
   }
 
   toStringNameComplete(): void {
@@ -180,14 +179,14 @@ function main() {
   let filterByName = user.showClientName("Isabella");
   console.log(filterByName);
 
-  let deleteUser = user.removeUser()
-  console.log(deleteUser)
+  let deleteUser = user.removeUser();
+  console.log(deleteUser);
 
-  let userUpdate = user.updateUser(3, 21, "rubens@email.com", "Rubens", "Reis")
-  console.log(userUpdate)
+  let userUpdate = user.updateUser(3, 21, "rubens@email.com", "Rubens", "Reis");
+  console.log(userUpdate);
 
-  let higherValue = user.expansiveProduct()
-  console.log(higherValue)
+  let higherValue = user.expansiveProduct();
+  console.log(higherValue);
 
   return baseAllUsers;
 }
